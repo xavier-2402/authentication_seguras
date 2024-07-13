@@ -1,7 +1,16 @@
 .logo{
     max-width: 100%;
+    display: inline-block;
 }
 
 .input-login{
     background-color: #fff62359;
+}
+
+.text-welcome{
+    text-align: left;
+}
+
+.content{ 
+    text-align: center;
 }
