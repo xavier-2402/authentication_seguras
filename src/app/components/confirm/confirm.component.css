@@ -1,0 +1,21 @@
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .image-item {
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  
+  .image-item.selected {
+    border-color: blue;
+  }
+  
+  .image-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  

@@ -16,24 +16,24 @@
         </div>
     </nz-col>
     <nz-col nzMd="4" nzXs="24">
-        <form nz-form>
+        <form nz-form [formGroup]="form">
             <nz-form-item>
               <nz-form-control>
                 <nz-input-group nzPrefixIcon="user">
-                  <input nz-input placeholder="Usuario" class="input-login item-login" />
+                  <input nz-input placeholder="Usuario"  formControlName="userName" class="input-login item-login" />
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
               <nz-form-control>
                 <nz-input-group nzPrefixIcon="lock">
-                  <input nz-input type="password" placeholder="Contraseña" class="input-login item-login"/>
+                  <input nz-input type="password" placeholder="Contraseña" formControlName="password" class="input-login item-login"/>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
           </form>
           <div class="links">
-            <button nz-button nzType="primary" class="color-bank btn-login ">
+            <button nz-button nzType="primary" class="color-bank btn-login " (click)="login()">
               Ingresar
             </button>
             <button nz-button nzSize="small" class=" item-login item-forget"> ¿Olvidó su clave?</button>
