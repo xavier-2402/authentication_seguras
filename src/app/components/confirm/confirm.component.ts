@@ -42,6 +42,9 @@ export class ConfirmComponent implements OnInit {
     if(!this.customerId) this.router.navigate(['/login'])
     this.customer = this.customerService.getById(this.customerId);
     if(!this.customer || !this.customer.isLogged) this.router.navigate(['/login'])
+    else{
+      if(this.customer && this.customer.isCorrect) this.router.navigate(['detail/',this.customerId])
+    }
   }
 
   getQuestion(){

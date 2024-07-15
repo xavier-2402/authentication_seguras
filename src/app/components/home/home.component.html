@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <nz-card style="width:100%;">
       <nz-card-meta
         nzTitle="Banco de Loja"
@@ -9,9 +9,64 @@
           <img src="../assets/bancoLoja.PNG" alt="Impuesto Predial" />
         </div>
         <div class="actions">
-          <button nz-button nzType="primary" nzSize="large" routerLink="/login">Personas</button>
+          <button nz-button nzType="primary" nzSize="large" >Personas</button>
           <button nz-button nzSize="large">Empresas</button>
         </div>
       </div>
     </nz-card>
+  </div> -->
+
+<div style="width: 100%; height: 80dvh;">
+    <div class="container">
+        <div class="image-container">
+            <img src="../assets/ad0a5446_predio.jpg" style="object-fit: contain;" alt="">
+        </div>
+        <div class="overlay">
+            <div
+                style="width: 100%; height: 110px; background-color: transparent; display:flex;place-items: center; place-content: center; padding: 10px;">
+                <img src="../assets/IcoBancaElectronica.png" style="width: 50px;object-fit: contain;" alt="">
+                <b>BANCA ELECTRÓNICA</b>
+            </div>
+            <div style="width: 100%; height: 70px; background-color: transparent; padding: 0px 20px;">
+                <div nz-row [nzGutter]="[4,4]" style="width: 100%; height: 100%; padding: 10px; cursor: pointer;" routerLink="/login">
+                    <div nz-col [nzXs]="4" [nzSm]="4" [nzMd]="4" [nzLg]="4" [nzXl]="4" [nzXXl]="4"
+                        style="height: 100%; padding: 10px; border-right: 2px solid white;">
+                        <img src="../assets/IcoBancaPersonas.png" style="width: 100%;object-fit: contain;" alt="">
+                    </div>
+                    <div nz-col [nzXs]="20" [nzSm]="20" [nzMd]="20" [nzLg]="20" [nzXl]="20" [nzXXl]="20"
+                        style="height: 100%; display: grid; place-content: center; padding: 10px;">
+                        <b>PERSONAS</b>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; height: 70px; background-color: transparent; padding: 0px 20px;">
+                <div nz-row [nzGutter]="[4,4]" style="width: 100%; height: 100%; padding: 10px;">
+                    <div nz-col [nzXs]="4" [nzSm]="4" [nzMd]="4" [nzLg]="4" [nzXl]="4" [nzXXl]="4"
+                        style="height: 100%; padding: 10px; border-right: 2px solid white;">
+                        <img src="../assets/IcoBancaEmpresas.png" style="width: 100%;object-fit: contain;" alt="">
+                    </div>
+                    <div nz-col [nzXs]="20" [nzSm]="20" [nzMd]="20" [nzLg]="20" [nzXl]="20" [nzXXl]="20"
+                        style="height: 100%; display: grid; place-content: center; padding: 10px;">
+                        <b>EMPRESAS</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; height: 15dvh; background-color: #FFFFFF; position: fixed;bottom: 0;z-index: 1000;width: 100%;">
+  <div nz-row style="width: 100%; height: 100%; padding: 20px 40px;">
+      <div nz-col style="height: 100%; display: flex; place-items: center; place-content: center; border-left: 2px solid #CAD4DB; border-right: 2px solid #CAD4DB;" [nzXs]="6" [nzSm]="6" [nzMd]="6" [nzLg]="6" [nzXl]="6" [nzXXl]="6">
+          <img src="./../../../../../assets/personas.PNG" style="width: 100%;; object-fit: contain;" alt="">
+      </div>
+      <div nz-col style="height: 100%; display: flex; place-items: center; place-content: center; border-right: 2px solid #CAD4DB;" [nzXs]="6" [nzSm]="6" [nzMd]="6" [nzLg]="6" [nzXl]="6" [nzXXl]="6">
+          <img src="./../../../../../assets/empresas.PNG" style="width: 100%;; object-fit: contain;" alt="">
+      </div>
+      <div nz-col style="height: 100%; display: flex; place-items: center; place-content: center; border-right: 2px solid #CAD4DB;" [nzXs]="6" [nzSm]="6" [nzMd]="6" [nzLg]="6" [nzXl]="6" [nzXXl]="6">
+          <img src="./../../../../../assets/microfinanzas.PNG" style="width: 100%;; object-fit: contain;" alt="">
+      </div>
+      <div nz-col style="height: 100%; display: flex; place-items: center; place-content: center;border-right: 2px solid #CAD4DB;" [nzXs]="6" [nzSm]="6" [nzMd]="6" [nzLg]="6" [nzXl]="6" [nzXXl]="6">
+          <img src="./../../../../../assets/targeta de credito.PNG" style="width: 100%;; object-fit: contain;" alt="">
+      </div>
   </div>
+</div>
