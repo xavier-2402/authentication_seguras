@@ -21,7 +21,8 @@ export class ConfirmComponent implements OnInit {
   imageSelected: number | null = null;
   form:UntypedFormGroup;
 
-  constructor(private route:ActivatedRoute, private router:Router, private customerService:CustomerService, private fb:UntypedFormBuilder, private msg:NzMessageService){
+  constructor(private route:ActivatedRoute, private router:Router, private customerService:CustomerService, 
+    private fb:UntypedFormBuilder, private msg:NzMessageService){
     this.buildForm();
   }
 
@@ -77,7 +78,8 @@ export class ConfirmComponent implements OnInit {
       this.form.reset();
       this.imageSelected = 0;
     }else{
-      this.msg.success('Exitoso')
+      this.customerService.updatecorrectCustomer(this.customer.code,true);
+      this.router.navigate(['detail/',this.customerId])
     }
   }
 }

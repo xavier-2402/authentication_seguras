@@ -22,7 +22,7 @@ export class CustomerService {
         {
           code:1,
           title:'¿Cuales son los últimos 4 digitos de su cédula?',
-          answer:'6987'
+          answer:'1268'
         },
         {
           code:2,
@@ -30,7 +30,13 @@ export class CustomerService {
           answer:'Yanza'
         }
       ],
-      isLogged:true
+      accounts:[{
+        accountNumber:'52866690',
+        type:'Ahorros',
+        balance:8214.36,
+        availableBalance:556.00,
+        status:true
+      }]
     },
     {
       code:2,
@@ -52,7 +58,9 @@ export class CustomerService {
           title:'¿Apellido materno?',
           answer:'Villa'
         }
-      ]
+      ],
+      accounts:[]
+
     },
     {
       code:3,
@@ -74,51 +82,8 @@ export class CustomerService {
           title:'¿Cuales son los últimos 4 digitos de su cédula?',
           answer:'9354'
         }
-      ]
-    },
-    {
-      code:4,
-      id:'6Em6phA7HeBr',
-      firstName:'Cliente',
-      lastName: 'Test',
-      accountNumber:'9874215436',
-      userName:'cliente4',
-      password:"test4",
-      imageCode:10,
-      questions:[
-        {
-          code:1,
-          title:'¿Ciudad favorita?',
-          answer:'Cuenca'
-        },
-        {
-          code:2,
-          title:'¿Apellido paterno?',
-          answer:'Test'
-        }
-      ]
-    },
-    {
-      code:5,
-      id:'ki9rUT5oxuTR',
-      firstName:'Xavier',
-      lastName: 'Banza',
-      accountNumber:'98720365',
-      userName:'xavi7841',
-      password:"test5",
-      imageCode:7,
-      questions:[
-        {
-          code:1,
-          title:'¿A que le tiene miedo?',
-          answer:'Alturas'
-        },
-        {
-          code:2,
-          title:'¿Nombre de su padre?',
-          answer:'Carlos'
-        }
-      ]
+      ],
+      accounts:[]
     }
   ]
 

@@ -16,6 +16,9 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     HomeComponent,
     LoginComponent,
     ConfirmComponent,
+    CustomerDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +41,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzSpaceModule,
     NzMessageModule,
     BrowserAnimationsModule,
-    NzIconModule
+    NzIconModule,
+    NzTableModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

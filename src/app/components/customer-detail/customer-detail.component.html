@@ -1,0 +1,25 @@
+<div *ngIf="customer">
+    <h3 class="text-welcome">{{customer.firstName |uppercase}} {{customer.lastName |uppercase}} - {{customer.accountNumber}}</h3>
+    <h3 class="text-welcome">POSICIÓN CONSOLIDADA</h3>
+    <nz-table #basicTable [nzData]="customer.accounts">
+        <thead>
+          <tr>
+            <th>Tipo Cuenta</th>
+            <th>Nro.Cuenta</th>
+            <th>Saldo Contable</th>
+            <th>Saldo disponible</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.type ?? '' }}</td>
+            <td>{{ data.accountNumber ?? '' }}</td>
+            <td>{{ data.balance ?? 0 }}</td>
+            <td>{{  data.availableBalance ?? 0 }}</td>
+            <td *ngIf="data.status">ACTIVA</td>
+            <td *ngIf="!data.status">INACTIVA</td>
+          </tr>
+        </tbody>
+      </nz-table>
+</div>

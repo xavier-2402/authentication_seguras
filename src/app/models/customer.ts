@@ -1,3 +1,4 @@
+import { Account } from "./account";
 import { Question } from "./question";
 
 export interface Customer{
@@ -12,4 +13,5 @@ export interface Customer{
     imageCode:number;
     isLogged?:boolean;
     isCorrect?:boolean;
+    accounts:Account[]
 }
