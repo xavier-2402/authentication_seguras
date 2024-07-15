@@ -2,27 +2,37 @@
 <div class="login-container">
     <nz-card>
         <nz-row [nzGutter]="[8,8]" id="login-content">
-            <nz-col nzMd="14" nzXs="24" >
+            <nz-col nzSpan="24" >
                     <div class="header">
                         <h2>ACCESO BANCA ELECTRÓNICA</h2>
                     </div>
                     <div class="content">
                         <h3 class="text-welcome">BIENVENIDO  {{customer.firstName |uppercase}} {{customer.lastName |uppercase}}</h3>
-                        <p class="text-welcome">Por favor responda la siguientre y seleccione una imagen</p>
-                        {{question.title}}
+                        <p class="text-welcome">Por favor responda la siguiente pregunta y seleccione una imagen</p>
+                        <form nz-form [formGroup]="form">
+                            <nz-row>
+                                <nz-col nzSpan="20">
+                                    <nz-form-item>
+                                        <nz-form-label nzSpan="24" class="label-align"> {{question.title}} </nz-form-label>
+                                        <nz-form-control nzErrorTip="Ingrese una respuesta">
+                                            <input nz-input formControlName="answer"  type="text" autocomplete="off" style="width: 30%;" />
+                                            <button nz-button nzSize="small" style="margin-left: 10px;" (click)="getQuestion()"> 
+                                                <i class="fa-solid fa-rotate" style="margin-right: 3px;"></i> Cambiar pregunta
+                                            </button>
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </nz-col>
+                            </nz-row>
+                        </form>
                         <p class="text-welcome">Por favor <b>seleccione la imagen</b> que asoció al proceso de registro/actualización de información 
                             y presione el botón <b>ACEPTAR</b> para continuar</p>
-
-                        <div class="image-list">
-                            <div 
-                                *ngFor="let imagen of images" 
-                                class="image-item"
-                                [class.selected]="isImageSelected(imagen.code)"
-                                (click)="selectImage(imagen.code)">
-                                <img [src]="imagen.url" alt="Imagen {{imagen.code}}">
-                            </div>
-                            </div>
-                        <button nz-button>
+                        
+                        <nz-row class="image-list">
+                            <nz-col *ngFor="let imagen of images"  nzMd="4" nzXs="8">
+                                <img [src]="imagen.url" alt="Imagen {{imagen.code}}"  class="image-item" [class.selected]="isImageSelected(imagen.code)"   (click)="selectImage(imagen.code)">
+                            </nz-col>
+                        </nz-row>
+                        <button nz-button class="color-bank btn-accept" (click)="validateData()">
                             ACEPTAR
                         </button>
                           

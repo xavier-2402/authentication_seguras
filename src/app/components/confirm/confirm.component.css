@@ -10,7 +10,7 @@
   }
   
   .image-item.selected {
-    border-color: blue;
+    border-color: #327325;
   }
   
   .image-item img {
@@ -19,3 +19,12 @@
     object-fit: cover;
   }
   
+  .image-item {
+    width: 100px;
+    height: 100px; 
+    object-fit: cover;
+  }
+  .btn-accept{
+    margin-top: 10px;
+    color: #fff;
+  }

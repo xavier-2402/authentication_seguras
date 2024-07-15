@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +15,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ConfirmComponent
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
     FormsModule,
     NzFormModule,
     NzSpaceModule,
-    NzMessageModule
+    NzMessageModule,
+    BrowserAnimationsModule,
+    NzIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

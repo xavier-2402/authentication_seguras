@@ -15,8 +15,8 @@ export class CustomerService {
       firstName:'Xavier',
       lastName: 'Yanza',
       accountNumber:'60283607',
-      userName:'0105664',
-      password:"58965",
+      userName:'0107641268',
+      password:"@xavi_yaq",
       imageCode:4,
       questions:[
         {
@@ -38,8 +38,8 @@ export class CustomerService {
       firstName:'Cliente1',
       lastName: 'Clente',
       accountNumber:'91781365',
-      userName:'Cl917',
-      password:"test-87",
+      userName:'cliente1',
+      password:"test1",
       imageCode:1,
       questions:[
         {
@@ -60,8 +60,8 @@ export class CustomerService {
       firstName:'Cliente',
       lastName: 'Banca',
       accountNumber:'98102367',
-      userName:'banca547',
-      password:"@Banca587*",
+      userName:'banca',
+      password:"test2",
       imageCode:9,
       questions:[
         {
@@ -79,11 +79,11 @@ export class CustomerService {
     {
       code:4,
       id:'6Em6phA7HeBr',
-      firstName:'Banca',
+      firstName:'Cliente',
       lastName: 'Test',
       accountNumber:'9874215436',
-      userName:'test451',
-      password:"541872",
+      userName:'cliente4',
+      password:"test4",
       imageCode:10,
       questions:[
         {
@@ -105,7 +105,7 @@ export class CustomerService {
       lastName: 'Banza',
       accountNumber:'98720365',
       userName:'xavi7841',
-      password:"Bank21*",
+      password:"test5",
       imageCode:7,
       questions:[
         {
@@ -163,7 +163,7 @@ export class CustomerService {
       code:10,
       url:'../../assets/palmera.PNG'
     },
-    {
+/*     {
       code:11,
       url:'../../assets/paloma.PNG'
     },
@@ -186,7 +186,7 @@ export class CustomerService {
     {
       code:16,
       url:'../../assets/televisor.PNG'
-    }
+    } */
   ]
   
   constructor() { }
@@ -222,11 +222,13 @@ export class CustomerService {
     if(customer) customer.isCorrect = isCorrect;
   }
 
-  getQuestion(customerCode:number):Question{
+  getQuestion(customerCode:number, currentQuestionCode:number):Question{
     let customer = this.customers.find(x => x.code == customerCode);
     if(!customer) return null;
     let index = Math.floor(Math.random() * customer.questions.length);
-    return customer.questions[index];
+    let question =  customer.questions[index];
+    if(currentQuestionCode != question.code) return question;
+    else return this.getQuestion(customerCode,currentQuestionCode);
   }
 
   getImages(quantity: number): Image[] {
