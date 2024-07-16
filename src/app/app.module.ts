@@ -19,6 +19,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
     NzMessageModule,
     BrowserAnimationsModule,
     NzIconModule,
-    NzTableModule
+    NzTableModule,
+    NzInputModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]

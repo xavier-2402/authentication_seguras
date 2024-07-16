@@ -13,6 +13,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class LoginComponent {
 
   form:UntypedFormGroup;
+  passwordVisible = false; 
 
   constructor(private fb:UntypedFormBuilder,
     private msg:NzMessageService, 

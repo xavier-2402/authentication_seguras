@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Customer } from '../models/customer';
 import { Question } from '../models/question';
 import { Image } from '../models/image';
+import * as bcrypt from 'bcryptjs'
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class CustomerService {
       lastName: 'Yanza',
       accountNumber:'60283607',
       userName:'0107641268',
-      password:"@xavi_yaq",
+      password:bcrypt.hashSync('@xavi_yaq',10),
       imageCode:4,
       questions:[
         {
@@ -45,7 +46,7 @@ export class CustomerService {
       lastName: 'Clente',
       accountNumber:'91781365',
       userName:'cliente1',
-      password:"test1",
+      password:bcrypt.hashSync('test1',10),
       imageCode:1,
       questions:[
         {
@@ -69,7 +70,7 @@ export class CustomerService {
       lastName: 'Banca',
       accountNumber:'98102367',
       userName:'banca',
-      password:"test2",
+      password:bcrypt.hashSync('test2',10),
       imageCode:9,
       questions:[
         {
@@ -159,7 +160,9 @@ export class CustomerService {
   login(userName:string, password:string):Customer{
     userName = userName.trim();
     password = password.trim();
-    return this.customers.find(x => x.userName == userName && x.password == password);
+    let finded = this.customers.find(x => x.userName == userName);
+    if(finded && bcrypt.compareSync(password,finded.password)) return finded;
+    return  null;
   }
 
   getById(id:string):Customer{

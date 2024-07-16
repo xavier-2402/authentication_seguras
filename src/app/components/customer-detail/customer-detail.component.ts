@@ -27,7 +27,6 @@ export class CustomerDetailComponent implements OnInit {
   getCustomer(){
     if(!this.customerId) this.router.navigate(['/login'])
       this.customer = this.customerService.getById(this.customerId);
-      console.log(this.customer)
       if(!this.customer) this.router.navigate(['/login'])
       if(!this.customer.isCorrect) this.router.navigate(['/login'])
       if(!this.customer.isLogged) this.router.navigate(['/login'])

@@ -26,8 +26,15 @@
             </nz-form-item>
             <nz-form-item>
               <nz-form-control>
-                <nz-input-group nzPrefixIcon="lock">
-                  <input nz-input type="password" placeholder="Contraseña" formControlName="password" class="input-login item-login"/>
+                <nz-input-group  nzPrefixIcon="lock"[nzSuffix]="suffixTemplate" class="login-input">
+                  <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password" placeholder="Password" />
+                  <ng-template #suffixTemplate>
+                    <span
+                      nz-icon
+                      [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+                      (click)="passwordVisible = !passwordVisible"
+                    ></span>
+                  </ng-template>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
