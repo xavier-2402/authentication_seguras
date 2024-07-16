@@ -5,3 +5,24 @@
     display: block;
     padding-bottom: 10px;
   }
+
+#logout-section{
+  text-align: right;
+  padding: 0px 10px;
+}
+
+.col-detail{
+  margin-top: 20px;
+}
+
+#customer-info{
+  margin-left: 10px;
+}
+
+#btn-logout{
+  background-color: #e4d703;
+}
+
+.text{
+  color: #e4d703;
+}

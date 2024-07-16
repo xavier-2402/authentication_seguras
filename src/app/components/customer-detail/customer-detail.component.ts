@@ -12,6 +12,7 @@ export class CustomerDetailComponent implements OnInit {
 
   customer:Customer;
   customerId:string;
+  date:Date = new Date();
 
   constructor(private router:Router, private route:ActivatedRoute, private customerService:CustomerService){
 
@@ -30,5 +31,11 @@ export class CustomerDetailComponent implements OnInit {
       if(!this.customer) this.router.navigate(['/login'])
       if(!this.customer.isCorrect) this.router.navigate(['/login'])
       if(!this.customer.isLogged) this.router.navigate(['/login'])
+  }
+
+  logout(){
+    this.customerService.updateLoggedCustomer(this.customer.code,false);
+    this.customerService.updatecorrectCustomer(this.customer.code,false);
+    this.router.navigate(['/login'])
   }
 }

@@ -1,8 +1,19 @@
 <img src="../../../assets/bancoLoja.PNG" alt="Banco de Loja" width="100%">
 <div *ngIf="customer">
-    <h3 class="text-welcome">{{customer.firstName |uppercase}} {{customer.lastName |uppercase}} - {{customer.accountNumber}}</h3>
-    <h3 class="text-welcome">POSICIÓN CONSOLIDADA</h3>
-    <nz-table #basicTable [nzData]="customer.accounts">
+  <nz-row>
+    <nz-col nzSpan="7" class="col-detail">
+      <img src="../../../assets/en blanco.JPG" alt="Banco de Loja">
+    </nz-col>
+    <nz-col nzSpan="16" class="col-detail">
+      <span id="customer-info"><b>{{customer.firstName |uppercase}} {{customer.lastName |uppercase}} - {{customer.accountNumber}}</b></span><br>
+      <span> <b>Último acceso</b> {{date | date:'medium'}}</span>
+    </nz-col>
+    <nz-col nzSpan="1" id="logout-section" class="col-detail">
+      <button nz-button id="btn-logout" (click)="logout()">Salir</button>
+    </nz-col>
+  </nz-row>
+    <h3 class="text col-detail">POSICIÓN CONSOLIDADA</h3>
+    <nz-table #basicTable [nzData]="customer.accounts"class="col-detail">
         <thead>
           <tr>
             <th>Tipo Cuenta</th>
